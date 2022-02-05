@@ -16,13 +16,14 @@
     <script src='javascripts/modernizr.min.js'></script>
     <script src='javascripts/respond.min.js'></script>
   </head>
-  <body>
+  <body onmousemove="playMusic()">
 	<audio id="music_player" autoplay="autoplay" preload="preload">
 		<source src="music/bon_jovi.ogg" />
 		<source src="music/bon_jovi.mp3" />
 	</audio>
 	
-	<div id="container">
+	<div id="container" onmousemove="playMusic()">
+    <div id="start_container" onclick="playMusic()">CLICK HERE TO START EXPERIENCE</div>
 		<div id="sharing_container" style="display: none;">
 			<p>1967 - 2009</p>
 			<img src="images/dad.jpg" width="230" height="293" alt="Eric Sillevis" title="Eric Sillevis" />

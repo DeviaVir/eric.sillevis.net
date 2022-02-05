@@ -8,6 +8,9 @@ var camera, scene, renderer,
 birds, bird;
 
 var boid, boids;
+var audioHasInit = false;
+var musicPlayer = document.getElementById("music_player");
+var startContainer = document.getElementById("start_container");
 
 init();
 animate();
@@ -49,6 +52,7 @@ function init() {
 	renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+	startContainer.addEventListener( 'click', playMusic)
 	document.body.appendChild( renderer.domElement );
 }
 
@@ -66,6 +70,7 @@ function onDocumentMouseMove( event ) {
 
 	}
 
+	playMusic()
 }
 
 //
@@ -100,6 +105,14 @@ function render() {
 
 	renderer.render( scene, camera );
 
+}
+
+function playMusic() {
+	if(!audioHasInit) {
+		audioHasInit = true;
+		musicPlayer.play();
+		$('#start_container').fadeOut();
+	}
 }
 
 $( '#music_player' ).bind( 'playing', function() {
