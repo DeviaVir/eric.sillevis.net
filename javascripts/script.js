@@ -69,8 +69,6 @@ function onDocumentMouseMove( event ) {
 		boid.repulse( vector );
 
 	}
-
-	playMusic()
 }
 
 //
