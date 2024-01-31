@@ -105,11 +105,15 @@ function render() {
 
 }
 
-function playMusic() {
+async function playMusic() {
 	if (!audioHasInit) {
-		audioHasInit = true;
-		musicPlayer.play();
-		$('#start_container').fadeOut();
+		try {
+			await musicPlayer.play();
+			audioHasInit = true;
+			$('#start_container').fadeOut();
+		} catch (err) {
+			console.log('need user interaction first!');
+		}
 	}
 }
 
